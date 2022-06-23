@@ -1,4 +1,6 @@
 import { createStore } from 'vuex'
+import { Property } from '@/Models/Models'
+import axios from "axios";
 
 export default createStore({
   state: {
@@ -174,13 +176,25 @@ export default createStore({
         "properties": [],
         "agents": []
       }
-    ]
+    ],
+    onlineAgencies: undefined,
+    properties: Array<Property>()
   },
   getters: {
   },
   mutations: {
   },
   actions: {
+    getAgencies({state}){
+      axios.get("http://localhost:7210/agency").then(
+          response => state.onlineAgencies = response.data
+      )
+    },
+    getProperty({state},payload){
+      axios.get("http://localhost:7210/property/"+payload).then(
+          response => state.properties += response.data
+      )
+    }
   },
   modules: {
   }
