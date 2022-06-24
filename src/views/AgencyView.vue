@@ -2,7 +2,7 @@
     <div>
         <v-container
             v-for="agency in this.$store.state.agencies"
-            :key="agency"
+            :key="agency.id"
         >
             <agency-instance :agency="agency">
             </agency-instance>
