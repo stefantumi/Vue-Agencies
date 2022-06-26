@@ -6,6 +6,7 @@
         :subtitle="agent.ssid"
         :text="agent.firstName + ' ' + agent.lastName"
     >
+      <v-divider></v-divider>
     </v-card>
   </div>
 </template>
@@ -26,7 +27,6 @@ export default defineComponent({
 
 <style>
 .agent{
-  background-color: beige;
   border-radius: 8px;
   border: 1px solid black;
 }

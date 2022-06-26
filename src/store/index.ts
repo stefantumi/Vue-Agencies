@@ -3,8 +3,9 @@ import { Property } from '@/Models/Models'
 import axios from "axios";
 
 export default createStore({
+  strict: true,
   state: {
-    agencies:[
+    agencies: [
       {
         "id": 1,
         "name": "Remax",
@@ -181,6 +182,7 @@ export default createStore({
     properties: Array<Property>()
   },
   getters: {
+    allAgencies:(state) => state.agencies
   },
   mutations: {
   },

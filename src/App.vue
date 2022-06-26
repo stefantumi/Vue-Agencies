@@ -2,6 +2,11 @@
   <v-app>
   <v-app-bar>
     <router-view to="/agencies"> Agencies </router-view>
+    <v-btn
+        @click="toggleTheme"
+    >
+      THEME
+    </v-btn>
   </v-app-bar>
     <v-main>
       <router-view/>
@@ -11,6 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useTheme } from 'vuetify'
 
 export default defineComponent({
   name: 'App',
@@ -20,5 +26,12 @@ export default defineComponent({
       //
     }
   },
+  setup () {
+    const theme = useTheme()
+    return {
+      theme,
+      toggleTheme: () => theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+      }
+    }
 })
 </script>

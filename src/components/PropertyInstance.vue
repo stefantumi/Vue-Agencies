@@ -35,7 +35,9 @@ export default defineComponent({
 
 <style>
 .prop{
+  /*
   background-color: beige;
+  */
   border-radius: 8px;
   border: 1px solid black;
 }

@@ -9,7 +9,7 @@
                 fluid
             >
               <v-row
-                  dense
+                  dense="1"
                   class="d-inline-block v-col-6 "
                   v-for="property in agency.properties"
                   :key="property.id"
@@ -25,7 +25,7 @@
                 fluid
             >
               <v-row
-                  dense
+                  dense="1"
                   class="d-inline-block v-col-6 "
                   v-for="agent in agency.agents"
                   :key="agent.id"
