@@ -1,15 +1,12 @@
 <template>
     <div>
         <v-container>
-<!--            v-for="agency in this.$store.state.agencies"
-            :key="agency"-->
-
-            <v-select
-                :items="agencies"
-            >
-              <agency-instance :agency="agency">
-              </agency-instance>
-            </v-select>
+          <agency-instance
+              v-for="agency in agencies"
+              :key="agency"
+              :agency="agency"
+          >
+          </agency-instance>
         </v-container>
     </div>
 </template>
@@ -19,6 +16,7 @@
 import AgencyInstance from "@/components/AgencyInstance.vue";
 import {computed, defineComponent } from "vue";
 import {useStore} from "vuex";
+import store from "@/store";
 
 export default defineComponent( {
   setup () {
@@ -27,10 +25,14 @@ export default defineComponent( {
       agencies: computed(() => store.state.agencies)
     }
   },
+  mounted() {
+    store.dispatch("setAgencies")
+  },
   name: "AgencyView",
     components:{
         AgencyInstance
     },
+
 });
 
 </script>
