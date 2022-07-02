@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-card
-        class="agent"
+        class="cardStyle"
+        elevation="8"
         :title="agent.id.toString()"
         :subtitle="agent.ssid"
         :text="agent.firstName + ' ' + agent.lastName"
@@ -26,8 +27,5 @@ export default defineComponent({
 </script>
 
 <style>
-.agent{
-  border-radius: 8px;
-  border: 1px solid black;
-}
+
 </style>

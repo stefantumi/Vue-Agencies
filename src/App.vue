@@ -10,7 +10,7 @@
     </v-btn>
   </v-app-bar>
     <v-main>
-      <router-view name="Agencies"/>
+      <router-view/>
     </v-main>
     <v-footer
         class="myFooter"
@@ -34,7 +34,6 @@ export default defineComponent({
   data () {
     return {
       //
-      drawer: false
     }
   },
   setup () {
@@ -47,7 +46,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style>
 .myFooter{
   background-color: beige;
 }

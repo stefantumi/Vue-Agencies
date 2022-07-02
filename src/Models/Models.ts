@@ -1,3 +1,5 @@
+
+
 export class Agency {
     "id":         number;
     "name":       string;
@@ -26,4 +28,3 @@ export class Address {
     "houseNo": number;
     "zip":     number;
 }
-

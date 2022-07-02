@@ -1,6 +1,7 @@
 <template>
   <v-card
-      class="prop"
+      class="cardStyle"
+      elevation="8"
   >
 
     <v-card-title>
@@ -28,17 +29,10 @@ export default defineComponent({
     name: "PropertyInstance",
     props: {
         property:Property
-    }
+    },
 })
 
 </script>
 
 <style>
-.prop{
-  /*
-  background-color: beige;
-  */
-  border-radius: 8px;
-  border: 1px solid black;
-}
 </style>

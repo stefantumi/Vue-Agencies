@@ -1,16 +1,22 @@
 <template>
     <div>
-
-        <v-card class="agency" >
+        <v-card
+            class="divStyle"
+            elevation="8"
+        >
           <v-row>
-            <v-card-title>
-              {{ agency.name }}
-            </v-card-title>
-            <v-icon
-                icon="mdi-delete"
-                @click="deleteAgency(agency)"
-            >
-            </v-icon>
+            <v-col>
+              <v-card-title>
+                {{ agency.name }}
+              </v-card-title>
+            </v-col>
+            <v-col>
+              <v-icon
+                  icon="mdi-delete"
+                  @click="deleteAgency(agency)"
+              >
+              </v-icon>
+            </v-col>
           </v-row>
 
           <v-card-subtitle>
@@ -58,9 +64,7 @@ import { Agency } from "@/Models/Models"
 import PropertyInstanceVue from "./PropertyInstance.vue";
 import AgentInstance from "@/components/AgentInstance.vue";
 import store from "@/store";
-/*
-import store from "@/store/index";
-*/
+
 
 export default defineComponent({
     name: "AgencyInstance",
@@ -74,7 +78,7 @@ export default defineComponent({
     },
     methods:{
       deleteAgency(agency: Agency){
-        store.dispatch('reomveAgency',agency )
+        store.dispatch('removeAgency',agency.id )
         this.$router.go(0)
       }
     },
@@ -85,7 +89,15 @@ export default defineComponent({
 </script>
 
 <style>
-.agency{
+.divStyle{
+  background-color: aquamarine;
+  border: none;
+  padding: 20px;
+  margin: 20px
+}
+.cardStyle{
+  background-color: darkgray;
+  border: none;
   padding: 20px;
   margin: 20px
 }

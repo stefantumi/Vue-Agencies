@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'agencies',
-    component: () => import('../views/AgencyView.vue')
+    component: () => import('../views/TabAgencyView.vue')
   }
 ]
 
